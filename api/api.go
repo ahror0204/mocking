@@ -16,8 +16,8 @@ func NewServer(strg storage.StorageI) Server {
 		storage: strg,
 	}
 
-	router.POST("/users")
-	router.GET("/users/:id")
+	router.POST("/users", s.CreateUser)
+	router.GET("/users/:id", s.GetUser)
 
 	s.Router = router
 	return s
